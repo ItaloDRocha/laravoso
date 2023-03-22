@@ -1,0 +1,8 @@
+mysql -u root -p = loga no banco de dados
+use laravoso = nome do bd a ser utilizado
+
+php artisan serve = inicializa o localhost
+
+php artisan tinker
+
+User::factory()->create()

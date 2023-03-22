@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Form\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('listagem-usuario', [UserController::class, 'listUser']);
+
+Route::get('usuarios', [TestController::class,'listAllUsers'])->name('users.listAll');
