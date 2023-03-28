@@ -19,6 +19,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('listagem-usuario', [UserController::class, 'listUser']);
-
 Route::get('usuarios', [TestController::class,'listAllUsers'])->name('users.listAll');
+
+Route::get('usuarios/novo', [TestController::class, 'formAddUser']) ->name('users.formAddUser');
+
+Route::get('usuarios/editar/{user}', [TestController::class, 'formEditUser']) ->name('users.formEditUser');
+
+Route::get('usuarios/{user}', [TestController::class, 'listUser']) ->name('users.list');
+
+Route::post('usarios/store', [TestController::class, 'storeUser'])->name('users.store');
+
+Route::put('usuarios/edit/{user}', [TestController::class, 'edit'])->name('users.edit');
+
+Route::delete('usuarios/destroy/{user}', [TestController::class, 'destroy'])->name('users.destroy');;
+
