@@ -22,12 +22,9 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>
-                <form id ='ver_usuario_form{{$user->id}}' action="{{route('users.list', ['user' => $user->id])}}" method="get">
-                    @csrf
-                    <a class='ver_usuario_js' data-user='{{$user->id}}' href="javascript:void(0)">Ver Usuário</a>
-                </form>
+                <a  href="{{route('user.show', ['user' => $user->id])}}">Ver Usuário</a>
                 
-                <form action="{{route('users.destroy', ['user' => $user->id])}}" method="post">
+                <form action="{{route('user.destroy', ['user' => $user->id])}}" method="post">
                     @csrf
                     @method('delete')
                     <input type="hidden" name="user" value="{{$user->id}}">
@@ -38,19 +35,5 @@
         @endforeach
     </table>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script>
-        $(document).ready(function () {
-
-            $(".ver_usuario_js").click(function (e) { 
-                let user_id = $(this).attr("data-user");
-
-                $(`#ver_usuario_form${user_id}`).submit();
-            });
-            
-        });
-    </script>
-    
 </body>
 </html>

@@ -6,3 +6,6 @@ php artisan serve = inicializa o localhost
 php artisan tinker
 
 User::factory()->create()
+
+
+php artisan make:controller Form\\ResourceController --resource --model=User

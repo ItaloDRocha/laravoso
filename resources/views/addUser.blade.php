@@ -7,7 +7,7 @@
     <title>Adicionar Usuário</title>
 </head>
 <body>
-    <form action="{{route('users.store')}}" method="post">
+    <form action="{{route('user.store')}}" method="post">
         @csrf
         
         <label for="">Nome do usuario: </label>
